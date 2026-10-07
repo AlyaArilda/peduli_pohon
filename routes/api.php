@@ -22,13 +22,10 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail']);
 Route::post('/reset-password', [ForgotPasswordController::class, 'reset']);
-
 //logout
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
-
 // data pohon
 Route::apiResource('/api-pohons', DataPohonController::class)->middleware('auth:sanctum');
-
 // data artikel
 Route::apiResource('/api-artikels', DataArtikelController::class)->middleware('auth:sanctum');
 //data laporan
